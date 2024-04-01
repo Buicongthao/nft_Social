@@ -18,6 +18,14 @@ import {
   MD3LightTheme,
   adaptNavigationTheme,
 } from "react-native-paper";
+import Login from '../Screen/Login';
+import Register from '../Screen/Register';
+import ForgotPassword from '../Screen/ForgotPassword';
+import ProfileScreen from '../Screen/Profile';
+import Home from "../Screen/Home";
+import BottomNavigation from "../Screen/BottomNavigation";
+ 
+
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -49,14 +57,26 @@ const Stack = createNativeStackNavigator();
 
 const AppStack = () => {
   return (
-    <Stack.Navigator initialRouteName={"Home"}>
+    <Stack.Navigator initialRouteName={"Main"}
+    
+    >
+       {/* <Stack.Screen name="Login" component={Login} options={{ title: 'Login' }} />
+        <Stack.Screen name="Register" component={Register} options={{ title: 'Register' }} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{ title: 'Forgot Password' }} /> */}
+          <Stack.Screen
+        name="HomeStack"
+        component={HomeNavigator}
+         
+      />
+        {/* <Stack.Screen name="Profile" component={ProfileScreen} />
+        
       <Stack.Screen
         name="HomeStack"
         component={HomeNavigator}
-        options={{ headerShown: false }}
-      />
+         
+      /> */}
       <Stack.Screen name="Settings" component={Screens.SettingsScreen} />
-      {/** 🔥 Your screens go here */}
+      
     </Stack.Navigator>
   );
 };
