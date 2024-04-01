@@ -30,7 +30,7 @@ export function ConnectButton() {
       mode="contained"
       disabled={authorizationInProgress}
       onPress={handleConnectPress}
-      style={{ flex: 1 }}
+      style={{ flex: 1}}
     >
       Connect
     </Button>
