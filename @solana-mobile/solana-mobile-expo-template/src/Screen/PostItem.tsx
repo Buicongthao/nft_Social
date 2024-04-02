@@ -4,19 +4,22 @@ import { View, Text, TouchableOpacity, StyleSheet, Image, TextInput, FlatList } 
 interface PostItemProps {
   postContent: string;
   images: string[];
-  navigation : any ;
-  postId : Number ;
+  navigation: any;
+  postId: number;
 }
 
-const PostItem: React.FC<PostItemProps> = ({ postContent, images}) => {
+const PostItem: React.FC<PostItemProps> = ({ postContent, images }) => {
   const [liked, setLiked] = useState<boolean>(false);
   const [showMessageInput, setShowMessageInput] = useState<boolean>(false);
   const [comment, setComment] = useState<string>('');
   const [comments, setComments] = useState<string[]>([]);
   const [showComments, setShowComments] = useState<boolean>(true);
+  const [likeCount, setLikeCount] = useState<number>(0);
 
   const handleLike = () => {
     setLiked(!liked);
+    // Tăng hoặc giảm số lượng lượt thích
+    setLikeCount(liked ? likeCount - 1 : likeCount + 1);
   };
 
   const handleToggleMessageInput = () => {
@@ -46,20 +49,17 @@ const PostItem: React.FC<PostItemProps> = ({ postContent, images}) => {
         </TouchableOpacity>
 
         <Text style={{ textAlign: 'center', lineHeight: 40, fontSize: 20, fontWeight: 'bold', marginLeft: 10 }}>
-          Cô gái dễ thương
+          Nam Trường
         </Text>
       </View>
 
       <Text style={styles.postContent}>{postContent}</Text>
 
-      {/* {images.map((image, index) => (
-        <Image  source={postImage} style={styles.selectedImage} />
-      ))} */}
-        <Image  source={postImage} style={styles.selectedImage} />
+      <Image source={postImage} style={styles.selectedImage} />
 
       <View style={styles.interactionContainer}>
         <TouchableOpacity onPress={handleLike} style={[styles.interactionButton, liked && styles.likedButton]}>
-          <Text style={[styles.interactionButtonText, liked && styles.likedButtonText]}>Like</Text>
+          <Text style={[styles.interactionButtonText, liked && styles.likedButtonText]}>Like ({likeCount})</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.interactionButton}>
           <Text style={styles.interactionButtonText}>Buy</Text>
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   selectedImage: {
-    borderRadius:10,
+    borderRadius: 10,
     width: '100%',
     height: 300,
     resizeMode: 'cover',

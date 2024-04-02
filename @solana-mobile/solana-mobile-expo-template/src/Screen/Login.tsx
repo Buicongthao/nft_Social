@@ -3,14 +3,15 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-nativ
 import { useNavigation, NavigationProp } from '@react-navigation/native'; 
 // import Icon from 'react-native-vector-icons/FontAwesome'; 
 // import { Input } from 'react-native-elements';
-
+import Home from './Home';
+import { HomeNavigator } from '../navigators/HomeNavigator';
 type RootStackParamList = {
-  Main: undefined;
+  HomeStack: undefined;
   Register: undefined;
   ForgotPassword: undefined;
 };
 
-type LoginScreenNavigationProp = NavigationProp<RootStackParamList, 'Main'>;
+type LoginScreenNavigationProp = NavigationProp<RootStackParamList, 'HomeStack'>;
 
 const Login: React.FC = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();
@@ -51,7 +52,7 @@ const Login: React.FC = () => {
           <Text style={styles.text}>Forgot Password</Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.log} onPress={() => navigation.navigate('Main')}>
+      <TouchableOpacity style={styles.log} onPress={() => navigation.navigate('HomeStack')}>
         <Text style={styles.textlog}>LOGIN</Text>
       </TouchableOpacity>
     </View>

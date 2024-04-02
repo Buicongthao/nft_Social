@@ -24,8 +24,7 @@ const Register = ({ navigation }) => {
       return;
     }
 
-    // Gửi yêu cầu đăng ký đến API
-    // Ví dụ:
+    
     fetch('http://your-api-url/register', {
       method: 'POST',
       headers: {
@@ -81,7 +80,7 @@ const Register = ({ navigation }) => {
       <TouchableOpacity onPress={toggleShowPassword}>
         <Text style={styles.showPasswordText}>{showPassword ? 'Hide' : 'Show'} Password</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button} onPress={handleRegister}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Login')}>
         <Text style={styles.buttonText}>Register</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.loginLink} onPress={() => navigation.navigate('Login')}>

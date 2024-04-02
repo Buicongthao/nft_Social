@@ -25,6 +25,7 @@ import ProfileScreen from '../Screen/Profile';
 import Home from "../Screen/Home";
 import BottomNavigation from "../Screen/BottomNavigation";
  
+ 
 
 
 /**
@@ -57,12 +58,13 @@ const Stack = createNativeStackNavigator();
 
 const AppStack = () => {
   return (
-    <Stack.Navigator initialRouteName={"Main"}
+    <Stack.Navigator initialRouteName={"Login"}
     
     >
-       {/* <Stack.Screen name="Login" component={Login} options={{ title: 'Login' }} />
+       <Stack.Screen name="Login" component={Login} options={{ title: 'Login' }} />
         <Stack.Screen name="Register" component={Register} options={{ title: 'Register' }} />
-        <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{ title: 'Forgot Password' }} /> */}
+        <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{ title: 'Forgot Password' }} />
+        <Stack.Screen name="Home" component={Home} options={{ title: 'Home' }} />
           <Stack.Screen
         name="HomeStack"
         component={HomeNavigator}
