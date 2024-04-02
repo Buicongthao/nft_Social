@@ -19,7 +19,7 @@ export function AppModal({
   show,
   submit,
   submitDisabled,
-  submitLabel = "Save", // Defaulting submitLabel to "Save" here
+  submitLabel = "Save",  
 }: AppModalProps) {
   const theme = useTheme();
   return (
