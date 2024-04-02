@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+<<<<<<< HEAD
 import Home  from './Home';
+=======
+>>>>>>> 0f4e15ae89d451d6e7fea08619d104a692525137
 import { HomeNavigator } from '../navigators/HomeNavigator';
 import { ConnectButton, SignInButton } from '../components/sign-in/sign-in-ui';
 
@@ -9,7 +12,19 @@ const ProfileScreen = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigation = useNavigation();
 
+<<<<<<< HEAD
  
+=======
+  // const handleConnectWallet = () => {
+  //   // Xử lý kết nối ví ở đây, sau khi kết nối thành công, cập nhật state
+  //   setIsLoggedIn(true);
+  // };
+
+  // const handleSignIn = () => {
+  //   // Xử lý đăng nhập ở đây, sau khi đăng nhập thành công, cập nhật state
+  //   setIsLoggedIn(true);
+  // };
+>>>>>>> 0f4e15ae89d451d6e7fea08619d104a692525137
 
   return (
     <View style={styles.container}>

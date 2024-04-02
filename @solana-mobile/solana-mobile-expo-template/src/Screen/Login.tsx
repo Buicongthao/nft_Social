@@ -3,15 +3,25 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-nativ
 import { useNavigation, NavigationProp } from '@react-navigation/native'; 
 // import Icon from 'react-native-vector-icons/FontAwesome'; 
 // import { Input } from 'react-native-elements';
+<<<<<<< HEAD
 import Home from './Home';
 import { HomeNavigator } from '../navigators/HomeNavigator';
 type RootStackParamList = {
   HomeStack: undefined;
+=======
+
+type RootStackParamList = {
+  Main: undefined;
+>>>>>>> 0f4e15ae89d451d6e7fea08619d104a692525137
   Register: undefined;
   ForgotPassword: undefined;
 };
 
+<<<<<<< HEAD
 type LoginScreenNavigationProp = NavigationProp<RootStackParamList, 'HomeStack'>;
+=======
+type LoginScreenNavigationProp = NavigationProp<RootStackParamList, 'Main'>;
+>>>>>>> 0f4e15ae89d451d6e7fea08619d104a692525137
 
 const Login: React.FC = () => {
   const navigation = useNavigation<LoginScreenNavigationProp>();
@@ -52,7 +62,11 @@ const Login: React.FC = () => {
           <Text style={styles.text}>Forgot Password</Text>
         </TouchableOpacity>
       </View>
+<<<<<<< HEAD
       <TouchableOpacity style={styles.log} onPress={() => navigation.navigate('HomeStack')}>
+=======
+      <TouchableOpacity style={styles.log} onPress={() => navigation.navigate('Main')}>
+>>>>>>> 0f4e15ae89d451d6e7fea08619d104a692525137
         <Text style={styles.textlog}>LOGIN</Text>
       </TouchableOpacity>
     </View>
